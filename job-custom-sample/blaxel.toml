@@ -1,0 +1,14 @@
+type = "job"
+# name = "my-job"
+# workspace = "my-workspace"
+
+policies = ["eu"]
+
+# [env]
+# DEFAULT_CITY = "San Francisco"
+
+# [runtime]
+# memory = 1024
+# maxConcurrentTasks = 10
+# timeout = 900
+# maxRetries=0

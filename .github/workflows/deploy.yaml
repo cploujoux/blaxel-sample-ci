@@ -1,0 +1,29 @@
+name: Blaxel deploy
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: blaxel-ai/bl-action@v1
+        with:
+          workspace: ${{ secrets.BL_WORKSPACE }}
+          apikey: ${{ secrets.BL_API_KEY }}
+      - name: Create .env files from all secrets
+        env: ${{ secrets }}
+        run: |
+          echo MY_ENV_ONE=${{ secrets.MY_ENV_ONE }} >> .env
+          echo MY_ENV_TWO=${{ secrets.MY_ENV_TWO }} >> .env
+
+          echo MY_CUSTOM_JOB_ENV=job-blaxel >> job-custom-sample/.env
+          echo MY_CUSTOM_MCP_ENV=mcp-blaxel >> mcp-custom-sample/.env
+
+      - name: Deploy
+        run: |
+          bl deploy

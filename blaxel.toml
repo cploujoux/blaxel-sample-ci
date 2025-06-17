@@ -1,0 +1,8 @@
+skipRoot = true
+
+[function.mcp-custom-sample]
+port = 1338
+path = "mcp-custom-sample"
+
+[job.job-custom-sample]
+path = "job-custom-sample"

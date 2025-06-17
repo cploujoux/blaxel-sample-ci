@@ -1,0 +1,26 @@
+{
+  "name": "mcp-helloworld",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/server.js",
+  "scripts": {
+    "start": "tsx src/server.ts",
+    "prod": "node dist/server.js",
+    "build": "tsc",
+    "dev": "tsx watch src/server.ts",
+    "inspect": "npx @modelcontextprotocol/inspector tsx src/server.ts"
+  },
+  "dependencies": {
+    "@blaxel/core": "0.2.16",
+    "@blaxel/telemetry": "0.2.16",
+    "@modelcontextprotocol/sdk": "^1.11.0",
+    "uuid": "^11.1.0",
+    "ws": "^8.18.2",
+    "zod": "^3.24.4"
+  },
+  "devDependencies": {
+    "@types/ws": "^8.18.1",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3"
+  }
+}
