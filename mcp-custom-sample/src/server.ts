@@ -7,6 +7,7 @@ import { z } from "zod";
 console.log(`MY_ENV_ONE: ${process.env.MY_ENV_ONE}`);
 console.log(`MY_ENV_TWO: ${process.env.MY_ENV_TWO}`);
 console.log(`MY_CUSTOM_MCP_ENV: ${process.env.MY_CUSTOM_MCP_ENV}`);
+console.log(`MY_CUSTOM_JOB_ENV: ${process.env.MY_CUSTOM_JOB_ENV}`);
 
 const server = new McpServer({
   name: "mcp-helloworld",
